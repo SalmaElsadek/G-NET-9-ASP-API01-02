@@ -13,11 +13,11 @@ namespace E_Commerce.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.HasOne(x=>x.productBrand).WithMany().HasForeignKey(x=>x.BrandId);
-            builder.HasOne(x=>x.productType).WithMany().HasForeignKey(x=>x.TypeId);
+            builder.HasOne(x=>x.ProductBrand).WithMany().HasForeignKey(x=>x.BrandId);
+            builder.HasOne(x=>x.ProductType).WithMany().HasForeignKey(x=>x.TypeId);
             builder.Property(x => x.Price).HasColumnType("decimal(18,2)");
             builder.Property(x => x.Name).HasMaxLength(100);
-            builder.Property(x => x.Description).HasMaxLength(100);
+            builder.Property(x => x.Description).HasMaxLength(500);
             builder.Property(x => x.PictureUrl).HasMaxLength(100);
         }
 
